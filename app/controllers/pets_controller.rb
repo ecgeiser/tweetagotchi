@@ -1,13 +1,14 @@
 class PetsController < ApplicationController
 
 	def index
-		@pet = Pet.find_by(user: current_user.id)
+		@pets = Pet.all
 	end
 
 	def show
 	end
 
 	def new
+		@pet = Pet.new
 	end
 
 	def create
