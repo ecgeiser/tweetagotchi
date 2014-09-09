@@ -8,6 +8,16 @@ class Pet < ActiveRecord::Base
 		self.hunger ||= 0
 	end
 
+	def grow_hungry
+		self.hunger += 1 unless self.hunger == 3
+	end
+
+	def feed
+		if @tweet_count > 0 && self.hunger != 0
+			self.hunger -= 1
+		end
+	end
+
 	def assign_image
 		animal = self.pet_type_id
 		case self.hunger
