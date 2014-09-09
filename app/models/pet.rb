@@ -13,8 +13,8 @@ class Pet < ActiveRecord::Base
 	end
 
 	def feed
-		tweet_count = Tweet.new.count_tweets
-		if tweet_count > 0 && self.hunger != 0
+		recent_tweet_count = user.recent_tweets.count
+		if recent_tweet_count > 0 && self.hunger != 0
 			self.hunger -= 1
 		end
 	end
