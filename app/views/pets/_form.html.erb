@@ -1,9 +1,9 @@
 <%= form_for(@pet) do |f| %>
 	Name: <%= f.text_field :name %><br>
 	Species: 
-	<% @type.each do |animal| %>
-		<%= f.radio_button :pet_type_id, animal %>
-		<%= f.label :pet_type_id, animal.capitalize, value: animal %>
+	<% @types.each do |pet_type| %>
+		<%= f.radio_button :pet_type_id, pet_type.id %>
+		<%= f.label :pet_type_id, pet_type.animal.capitalize %>
 	<% end %>
 	<br><%= f.submit %>
 <% end %>

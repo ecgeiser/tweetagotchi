@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 	def index
-		@pet = Pet.find_by(user: current_user.id)
+		@pet = Pet.find_by(user: current_user)
 	end
 
 	def show

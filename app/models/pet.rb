@@ -2,6 +2,7 @@ class Pet < ActiveRecord::Base
 	belongs_to :user
 	has_one :pet_type
 	after_initialize :init
+	before_create :assign_image
 
 	def init
 		self.hunger ||= 0
@@ -20,7 +21,7 @@ class Pet < ActiveRecord::Base
 			image = PetType.find(animal).photo_url_4
 		end
 
-		self.update(image: image)
+		self.image = image
 	end
 
 end

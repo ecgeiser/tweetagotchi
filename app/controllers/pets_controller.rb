@@ -10,11 +10,11 @@ class PetsController < ApplicationController
 
 	def new
 		@pet = Pet.new
-		@type = PetType.pluck(:animal)
+		@types = PetType.all
 	end
 
 	def create
-		@pet = Pet.new(pet_params)
+		@pet = Pet.new(pet_params.merge(user_id: current_user.id))
 		if @pet.save
 			redirect_to @pet
 		end
