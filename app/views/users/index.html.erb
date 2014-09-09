@@ -1,7 +1,7 @@
 <h2>Hello, world!</h2>
 
-<% if @pet.inspect %>
-	<p><%= link_to "Create Pet", new_pet_path %></p>
-<% else %>
+<% if @pet %>
 	<p>you have a pet</p>
+<% else %>
+	<p><%= link_to "Create Pet", new_pet_path %></p>
 <% end %>

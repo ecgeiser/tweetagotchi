@@ -1,4 +1,5 @@
 <%= form_for([@types, @pet]) do |f| %>
+	<%= f.hidden_field :user, current_user.id %>
 	Name: <%= f.text_field :name %><br>
 	Species: 
 	<%= f.radio_button :pet_type_id, 'dog' %>
