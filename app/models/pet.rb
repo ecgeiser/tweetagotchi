@@ -13,7 +13,8 @@ class Pet < ActiveRecord::Base
 	end
 
 	def feed
-		if @tweet_count > 0 && self.hunger != 0
+		tweet_count = Tweet.new.count_tweets
+		if tweet_count > 0 && self.hunger != 0
 			self.hunger -= 1
 		end
 	end

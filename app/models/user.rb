@@ -1,12 +1,18 @@
 class User < ActiveRecord::Base
 	has_one :pet, dependent: :destroy
+	has_many :tweets
 
 	def self.create_with_omniauth(auth)
 	  create! do |user|
 	    user.provider = auth["provider"]
 	    user.uid = auth["uid"]
 	    user.name = auth["info"]["name"]
+	    user.screen_name = auth["info"]["screen_name"]
 	  end
+	end
+
+	def recent_tweets
+		self.tweets.where(:created_at < 1.day.ago)
 	end
 
 	def User.new_remember_token

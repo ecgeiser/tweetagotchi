@@ -20,3 +20,6 @@
 
 #Ignore omniauth
 /config/initializers/omniauth.rb
+
+#Ignore settings
+/config/settings.yml
