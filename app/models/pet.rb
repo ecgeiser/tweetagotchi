@@ -10,6 +10,8 @@ class Pet < ActiveRecord::Base
 
 	def grow_hungry
 		self.hunger += 1 unless self.hunger == 3
+		self.save
+		self.assign_image
 	end
 
 	def feed
@@ -17,6 +19,8 @@ class Pet < ActiveRecord::Base
 		if recent_tweet_count > 0 && self.hunger != 0
 			self.hunger -= 1
 		end
+		self.save
+		self.assign_image
 	end
 
 	def assign_image
@@ -33,6 +37,7 @@ class Pet < ActiveRecord::Base
 		end
 
 		self.image = image
+		self.save
 	end
 
 end

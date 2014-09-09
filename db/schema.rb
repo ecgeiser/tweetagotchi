@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140908153513) do
 
   create_table "tweets", force: true do |t|
     t.text     "body"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

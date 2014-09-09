@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 	end
 
 	def recent_tweets
-		self.tweets.where(:created_at > 1.hour.ago)
+		self.tweets.where(":created_at > 1.hour.ago.to_date")
 	end
 
 	def User.new_remember_token
