@@ -139,6 +139,7 @@ DEPENDENCIES
   heroku_secrets!
   jbuilder (~> 2.0)
   jquery-rails
+  json
   omniauth-twitter
   pg
   rails (= 4.1.5)
