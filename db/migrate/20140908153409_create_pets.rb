@@ -6,6 +6,7 @@ class CreatePets < ActiveRecord::Migration
     	t.references :user
     	t.references :pet_type, presence: true
     	t.string :hashtag
+        t.string :image
 
     	t.timestamps
     end

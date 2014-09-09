@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140908153513) do
     t.integer  "user_id"
     t.integer  "pet_type_id"
     t.string   "hashtag"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

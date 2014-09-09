@@ -1,10 +1,9 @@
-<%= form_for([@types, @pet]) do |f| %>
-	<%= f.hidden_field :user, current_user.id %>
+<%= form_for(@pet) do |f| %>
 	Name: <%= f.text_field :name %><br>
 	Species: 
-	<%= f.radio_button :pet_type_id, 'dog' %>
-	<%= f.label :pet_type_id, 'Dog', value: 1 %>
-	<%= f.radio_button :pet_type_id, 'cat' %>
-	<%= f.label :pet_type_id, 'Cat', value: 2 %><br>
-	<%= f.submit %>
+	<% @type.each do |animal| %>
+		<%= f.radio_button :pet_type_id, animal %>
+		<%= f.label :pet_type_id, animal.capitalize, value: animal %>
+	<% end %>
+	<br><%= f.submit %>
 <% end %>
