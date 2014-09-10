@@ -16,12 +16,10 @@ namespace :scheduler do
 		User.all.each do |user|
 			recent_tweet = user.tweets
 			timestamp = recent_tweet[0]["created_at"]
-			if timestamp > 24.hours.ago
-				puts "You have not tweeted recently"
-				# user.pet.grow_hungry
+			if timestamp.to_time < 24.hours.ago.to_time
+				user.pet.grow_hungry
 			else
-				puts "You have tweeted recently"
-				# user.pet.feed
+				user.pet.feed
 			end
 		end
 	end
