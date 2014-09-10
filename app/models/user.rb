@@ -7,12 +7,13 @@ class User < ActiveRecord::Base
 	    user.provider = auth["provider"]
 	    user.uid = auth["uid"]
 	    user.name = auth["info"]["name"]
-	    # user.screen_name = auth["info"]["nickname"]
+	    user.screen_name = auth["info"]["nickname"]
 	  end
 	end
 
 	def recent_tweets
-		self.tweets.where(created_at => (1.hour.ago..Time.now))
+		hour_ago = 1.hour.ago.in_time_zone('Eastern Time (US & Canada)')
+		self.tweets.where(:created_at => (hour_ago..Time.now))
 	end
 
 	def User.new_remember_token

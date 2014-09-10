@@ -21,6 +21,15 @@ PetType.create([
 	}
 ])
 
+Tweet.create([
+	{body: "this is a tweet",
+		user_id: 1
+		},
+	{body: "this is another tweet",
+		user_id: 1
+		},
+])
+
 # Pet.create([
 # 	{ name: "Kuma", pet_type: 1, user: 1 }
 # ])
