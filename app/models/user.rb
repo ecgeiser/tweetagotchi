@@ -7,12 +7,12 @@ class User < ActiveRecord::Base
 	    user.provider = auth["provider"]
 	    user.uid = auth["uid"]
 	    user.name = auth["info"]["name"]
-	    user.screen_name = auth["info"]["screen_name"]
+	    # user.screen_name = auth["info"]["nickname"]
 	  end
 	end
 
 	def recent_tweets
-		self.tweets.where(":created_at > 1.hour.ago.to_date")
+		self.tweets.where(created_at => (1.hour.ago..Time.now))
 	end
 
 	def User.new_remember_token

@@ -15,6 +15,7 @@ class PetsController < ApplicationController
 
 	def create
 		@pet = Pet.new(pet_params.merge(user_id: current_user.id))
+		@pet.assign_image
 		if @pet.save
 			redirect_to @pet
 		end
@@ -26,6 +27,7 @@ class PetsController < ApplicationController
 
 	def update
 		@pet = Pet.find( params[:id] )
+		
 		if @pet.update(pet_params)
 			redirect_to @pet
 		end

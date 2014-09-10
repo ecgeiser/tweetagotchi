@@ -2,7 +2,6 @@ class Pet < ActiveRecord::Base
 	belongs_to :user
 	has_one :pet_type
 	after_initialize :init
-	before_create :assign_image
 
 	def init
 		self.hunger ||= 0
@@ -10,7 +9,6 @@ class Pet < ActiveRecord::Base
 
 	def grow_hungry
 		self.hunger += 1 unless self.hunger == 3
-		self.save
 		self.assign_image
 	end
 
@@ -19,7 +17,6 @@ class Pet < ActiveRecord::Base
 		if recent_tweet_count > 0 && self.hunger != 0
 			self.hunger -= 1
 		end
-		self.save
 		self.assign_image
 	end
 
@@ -35,9 +32,7 @@ class Pet < ActiveRecord::Base
 		when 0
 			image = PetType.find(animal).photo_url_4
 		end
-
-		self.image = image
-		self.save
+		self.update(image: image)
 	end
 
 end

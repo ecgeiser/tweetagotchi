@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140908153513) do
     t.string "uid"
     t.string "name"
     t.string "email"
+    t.string "screen_name"
   end
 
 end
