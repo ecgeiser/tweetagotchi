@@ -9,7 +9,7 @@
 PetType.create([
 	{ animal: "dog",
 		photo_url_4: "http://media-cache-ak0.pinimg.com/736x/1f/79/80/1f7980a9f3677c44f627f21c5bdc96ee.jpg",
-		photo_url_3: "http://4.bp.blogspot.com/-pfDXevZKguQ/Tah91Hd9ffI/AAAAAAAAAOA/K0_oHi1tH28/s220/bohdi.jpg",
+		photo_url_3: "http://i.imgur.com/DfAbR.jpg",
 		photo_url_2: "http://media-cache-ak0.pinimg.com/236x/29/26/f7/2926f7d33e649127f034de140dcf32e9.jpg",
 		photo_url_1: "http://shibainudog.net/wp-content/uploads/shiba-inu-puppies2.jpg"
 	},
@@ -21,15 +21,3 @@ PetType.create([
 	}
 ])
 
-Tweet.create([
-	{body: "this is a tweet",
-		user_id: 1
-		},
-	{body: "this is another tweet",
-		user_id: 1
-		},
-])
-
-# Pet.create([
-# 	{ name: "Kuma", pet_type: 1, user: 1 }
-# ])

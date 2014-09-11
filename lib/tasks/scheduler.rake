@@ -12,7 +12,7 @@ namespace :scheduler do
 		end
 	end
 
-	task :get_user_tweets => :environment do
+	task :hunger_cycle => :environment do
 		User.all.each do |user|
 			recent_tweet = user.tweets
 			timestamp = recent_tweet[0]["created_at"]

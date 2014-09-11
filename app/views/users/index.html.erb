@@ -1,5 +1,6 @@
 <% if current_user && @pet %>
 	<%= image_tag @pet.image %>
-<% else %>
-	<p><%= link_to "Create Pet", new_pet_path %></p>
+	<h2><%= @pet.name %></h2>
+<% elsif current_user %>
+	<h2><%= link_to "Create Pet", new_pet_path %></h2>
 <% end %>

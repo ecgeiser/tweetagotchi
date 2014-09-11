@@ -6,6 +6,7 @@ class PetsController < ApplicationController
 
 	def show
 		@pet = Pet.find( params[:id] )
+		@first_name = current_user.name.split(" ")[0]
 	end
 
 	def new

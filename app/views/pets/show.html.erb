@@ -1,3 +1,6 @@
 <h2>Hi, <%= current_user.name %> this is your pet!</h2>
 
-<%= image_tag @pet.image %>
+<%#= image_tag(@pet.image, class: "style_image") %>
+
+<img src=<%= @pet.image %> />
+<h2><%= @pet.name %></h2>
