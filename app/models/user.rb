@@ -12,14 +12,14 @@ class User < ActiveRecord::Base
 	end
 
 	def tweets
-		Tweet.get_tweets(self.screen_name)
+		tweet = Tweet.get_tweets(self.screen_name)
 	end
 
-	def recent_tweets
-		# hour_ago = 1.hour.ago.in_time_zone('Eastern Time (US & Canada)')
-		self.tweets
-		# self.tweets.where(:created_at => (hour_ago..Time.now))
-	end
+	# def recent_tweets
+	# 	# hour_ago = 1.hour.ago.in_time_zone('Eastern Time (US & Canada)')
+	# 	self.tweets
+	# 	# self.tweets.where(:created_at => (hour_ago..Time.now))
+	# end
 
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64
