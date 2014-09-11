@@ -36,7 +36,7 @@ Tweetagotchi was developed as a sample Rails project for the August 2014 Web Dev
 A full list of user stories can be found by looking at [this Pivotal Tracker Project](https://www.pivotaltracker.com/s/projects/1162088)
 
 ### ERD
-[See ERD](tweetagotchi_ERD.png)
+[See ERD](https://github.com/ecgeiser/tweetagotchi/blob/master/Tweetagotchi_ERD.png)
 
 
 ---
